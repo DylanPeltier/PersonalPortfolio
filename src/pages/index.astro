@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Icon } from 'astro-icon';
+import { Icon } from "astro-icon";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -31,7 +31,7 @@ import { Icon } from 'astro-icon';
 					<div class="second">&#63743;</div>
 				</div>
 				<div class="input">
-					<p>This is the input field</p>
+					<p>Press 'A' to access site:&nbsp;</p>
 				</div>
 				<div class="right-arrow">
 					<div class="third">
@@ -47,7 +47,7 @@ import { Icon } from 'astro-icon';
 </Layout>
 
 <style lang="css">
-	@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap');
+	@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap");
 
 	:root {
 		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
@@ -132,9 +132,45 @@ import { Icon } from 'astro-icon';
 		font-size: 0.9em;
 		width: auto;
 		height: auto;
+		position: relative;
 		color: #b5a7c9;
 		font-family: "Source Code Pro", monospace;
 		font-weight: 600;
+	}
+
+	.input p::before,
+	p::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+
+	.input p::before {
+		background: #0e1f48;
+		animation: typewriter 3s steps(26) 1s forwards;
+	}
+
+	.input p::after {
+		width: 0.5em;
+		margin-top: 2px;
+		height: 1em;
+		background: #b5a7c9;
+		animation: typewriter 3s steps(26) 1s forwards, blink 750ms steps(25) infinite;
+	}
+
+	@keyframes blink {
+		to {
+			background: transparent;
+		}
+	}
+
+	@keyframes typewriter {
+		to {
+			left: 100%;
+		}
 	}
 
 	[astro-icon="ci:home-alt-fill"] {
