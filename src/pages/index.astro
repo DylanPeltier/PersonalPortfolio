@@ -33,7 +33,13 @@ import { Icon } from "astro-icon";
 					<div class="second">&#63743;</div>
 				</div>
 				<div class="input">
-					<p>Press 'A' to access site:&nbsp;</p>
+					<label id="input" for="input"
+						>Press to access site:&nbsp;
+					</label>
+					<button class="lock-btn">
+						<Icon class="lock" name="mdi:lock" />
+						<Icon class="unlock" name="mdi:lock-open-variant" />
+					</button>
 				</div>
 				<div class="right-arrow">
 					<div class="third">
@@ -53,6 +59,53 @@ import { Icon } from "astro-icon";
 
 	:root {
 		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	.lock-btn {
+		width: 50px;
+		height: 100%;
+		border: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 3px;
+		background-color: #eee9d6;
+		cursor: pointer;
+		opacity: 0;
+		animation: 1s ease 4s normal forwards fadeIn;
+	}
+
+	.lock-btn:hover .lock,
+	.lock-btn .unlock {
+		display: none;
+	}
+
+	.lock-btn:hover .unlock {
+		display: inline;
+	}
+
+	[astro-icon="mdi:lock"] {
+		color: red;
+		width: 15px;
+		height: 15px;
+		padding-top: 2px;
+	}
+
+	[astro-icon="mdi:lock-open-variant"] {
+		color: green;
+		width: 15px;
+		height: 15px;
+		padding-top: 2px;
+	}
+
+	input {
+		height: 100%;
+		width: fit-content;
+		background-color: #4f39fa;
+		border: none;
+		z-index: 3;
+		opacity: 0;
+		animation: 1s ease 4s normal forwards fadeIn;
 	}
 
 	.third p {
@@ -130,7 +183,7 @@ import { Icon } from "astro-icon";
 		/* border: 1px solid #4f39fa */
 	}
 
-	.input p {
+	.input label {
 		font-size: 0.9em;
 		width: auto;
 		height: auto;
@@ -140,8 +193,8 @@ import { Icon } from "astro-icon";
 		font-weight: 600;
 	}
 
-	.input p::before,
-	p::after {
+	.input label::before,
+	label::after {
 		content: "";
 		position: absolute;
 		top: 0;
@@ -150,23 +203,35 @@ import { Icon } from "astro-icon";
 		left: 0;
 	}
 
-	.input p::before {
+	.input label::before {
 		background: #0e1f48;
-		animation: typewriter 3s steps(26) 1s forwards;
+		animation: typewriter 3s steps(22) 1s forwards;
 	}
 
-	.input p::after {
+	.input label::after {
 		width: 0.5em;
 		margin-top: 2px;
 		height: 1em;
+		visibility: visible;
+		opacity: 1;
 		background: #b5a7c9;
-		animation: typewriter 3s steps(26) 1s forwards,
-			blink 750ms steps(25) infinite;
+		animation: typewriter 3s steps(22) 1s forwards,
+			fadeOut 0.1s ease 4s forwards;
 	}
 
-	@keyframes blink {
+	@keyframes fadeOut {
 		to {
 			background: transparent;
+		}
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
 		}
 	}
 
@@ -411,21 +476,25 @@ import { Icon } from "astro-icon";
 	const loginElement = document.getElementById("login-date");
 
 	let dateString =
-		date.getDate() +
+		date.getDate().toString().padStart(2, "0") +
 		"-" +
-		(date.getMonth() + 1) +
+		(date.getMonth() + 1).toString().padStart(2, "0") +
 		"-" +
 		date.getFullYear() +
 		" " +
-		date.getHours() +
+		date.getHours().toString().padStart(2, "0") +
 		":" +
-		date.getMinutes();
+		date.getMinutes().toString().padStart(2, "0");
 
 	loginElement.innerHTML = `Last login: ${dateString}`;
 
 	const timeElement = document.getElementById("right-time");
-	let timeString = date.getHours().toString().padStart(2, '0') + ":" + date.getSeconds().toString().padStart(2, '0') + ":" + date.getMilliseconds().toString().slice(1);
-
+	let timeString =
+		date.getHours().toString().padStart(2, "0") +
+		":" +
+		date.getMinutes().toString().padStart(2, "0") +
+		":" +
+		date.getSeconds().toString().padStart(2, "0");
 	if (date.getHours() > 12) {
 		timeElement.innerHTML = `${timeString} pm`;
 	} else {
