@@ -1,31 +1,152 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Icon } from 'astro-icon';
 ---
 
 <Layout title="Welcome to Astro.">
-		<div class="terminal-container">
-			<div class="terminal-header">
-				<div class="nav-btn-container">
-					<span class="red-dot"></span>
-					<span class="yellow-dot"></span>
-					<span class="green-dot"></span>
-				</div>
-				<div class="text-container">
-					<p>dylan@Dylans-Macbook-Air:~</p>
-				</div>
-				<div class="dummy">
-					<p>&#8997;&#8984;1</p>
-				</div>
+	<div class="terminal-container">
+		<div class="terminal-header">
+			<div class="nav-btn-container">
+				<span class="red-dot"></span>
+				<span class="yellow-dot"></span>
+				<span class="green-dot"></span>
 			</div>
-			<div class="terminal-body">
-				<p>This is the body</p>
+			<div class="text-container">
+				<p>user@www.dylan.dev:~</p>
+			</div>
+			<div class="dummy">
+				<p>&#8997;&#8984;1</p>
 			</div>
 		</div>
+		<div class="terminal-body">
+			<div class="login-container">
+				<p>Last login: Wed Aug 17 15:44:24 on dylan.dev</p>
+			</div>
+			<div class="input-container">
+				<div class="left-arrow">
+					<div class="first">
+						<Icon name="ci:home-alt-fill" />
+						<Icon name="fa-solid:tilde" />
+					</div>
+					<div class="second">&#63743;</div>
+				</div>
+				<div class="input"></div>
+				<div class="right-arrow"></div>
+			</div>
+		</div>
+	</div>
 </Layout>
 
-<style>
+<style lang="css">
+	@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap");
+
 	:root {
 		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	[astro-icon="ci:home-alt-fill"] {
+		color: #eee9d6;
+		width: 15px;
+		height: 15px;
+		margin-left: 25px;
+		margin-right: 5px;
+	}
+
+	[astro-icon="fa-solid:tilde"] {
+		color: #eee9d6;
+		width: 12px;
+		height: 12px;
+	}
+
+	.left-arrow {
+		height: 100%;
+		width: 90px;
+		display: flex;
+		justify-content: space-evenly;
+		flex-direction: row;
+		border: 1px solid #4f39fa;
+	}
+
+	.second {
+		width: 30px;
+		height: 100%;
+		background: #eee9d6;
+		position: relative;
+		left: -65px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 0.9em;
+	}
+
+	.second:before {
+		content: "";
+		position: absolute;
+		right: -10px;
+		bottom: 0;
+		width: 0;
+		height: 0;
+		border-left: 10px solid #eee9d6;
+		border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+	}
+
+	.first {
+		width: 70px;
+		height: 100%;
+		left: 10px;
+		position: relative;
+		background: #268cd1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 0.9em;
+		color: #eee9d6;
+	}
+
+	.first:before {
+		content: "";
+		position: absolute;
+		right: -10px;
+		bottom: 0;
+		width: 0;
+		height: 0;
+		border-left: 10px solid #268cd1;
+		border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+	}
+
+	.input-container {
+		width: 98%;
+		height: 20px;
+		border: #4f39fa 1px solid;
+		margin-top: 5px;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.login-container {
+		width: 98%;
+		height: 15px;
+		border: #4f39fa 1px solid;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin-top: 5px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.login-container p {
+		font-size: 0.7em;
+		width: auto;
+		height: auto;
+		color: #b5a7c9;
+		font-family: "Source Code Pro", monospace;
 	}
 
 	h1 {
@@ -40,7 +161,7 @@ import Layout from "../layouts/Layout.astro";
 		display: inline-block;
 		margin-right: 6px;
 	}
-	
+
 	.yellow-dot {
 		height: 10px;
 		width: 10px;
@@ -61,7 +182,7 @@ import Layout from "../layouts/Layout.astro";
 	.terminal-container {
 		width: 100%;
 		height: 100%;
-		background-color: red;
+		background-color: #0e1f48;
 		border-radius: 10px;
 		display: flex;
 		align-items: center;
@@ -80,6 +201,7 @@ import Layout from "../layouts/Layout.astro";
 	}
 
 	.nav-btn-container {
+		margin-top: 2px;
 		width: 33%;
 		height: 100%;
 		display: flex;
@@ -99,10 +221,10 @@ import Layout from "../layouts/Layout.astro";
 		align-items: center;
 		justify-content: center;
 		left: 0;
-		border: #4f39fa 1px solid;
+		/* border: #4f39fa 1px solid; */
 	}
 
-	.text-container  p {
+	.text-container p {
 		font-size: 0.6em;
 		font-weight: bold;
 		color: #b5a7c9;
@@ -116,7 +238,7 @@ import Layout from "../layouts/Layout.astro";
 		align-items: center;
 		justify-content: flex-end;
 		left: 0;
-		border: #4f39fa 1px solid;
+		/* border: #4f39fa 1px solid; */
 		margin-right: 8px;
 	}
 
@@ -131,6 +253,10 @@ import Layout from "../layouts/Layout.astro";
 		height: 100%;
 		border: #4f39fa 2px solid;
 		border-radius: 0px 0px 10px 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
 	}
 
 	.text-gradient {
