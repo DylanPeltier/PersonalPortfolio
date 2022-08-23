@@ -1,9 +1,4 @@
 ---
-export interface Props {
-	title: string;
-}
-
-const { title } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -13,7 +8,7 @@ const { title } = Astro.props as Props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>Dylan Peltier</title>
 	</head>
 	<body>
 		<div class="bg">
@@ -22,15 +17,6 @@ const { title } = Astro.props as Props;
 			</div>
 		</div>
 		<style>
-			:root {
-				--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-				--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
-				--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-
-				--color-text: hsl(12, 5%, 4%);
-				--color-bg: hsl(10, 21%, 95%);
-				--color-border: hsl(17, 24%, 90%);
-			}
 
 			.bg {
 				width: 100%;
