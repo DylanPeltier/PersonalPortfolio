@@ -50,15 +50,223 @@ import { Icon } from "astro-icon";
 					</div>
 				</div>
 			</div>
+			<div class="card-container">
+				<div class="about-card">
+					<div class="title-container">
+						<h1>About Me</h1>
+					</div>
+					<div class="gtk">
+						<div class="subtitle">
+							<h2>Get to know me!</h2>
+						</div>
+						<div class="para">
+							<p>
+								Hello, my name is Dylan. I am currently a third
+								year Computer Science student at The University
+								of Windsor. My goal is to create and manage the
+								awesome projects you see everyday across the
+								web.
+							</p>
+						</div>
+					</div>
+					<div class="tech-stack">
+						<div class="subtitle">
+							<h2>My tech stack!</h2>
+						</div>
+						<div class="para">
+							<p>
+								I have worked with many technologies including
+								React, HTML, CSS, JavaScript, Java, C and
+								AstroJS. I am also familiar with backend
+								technologies such as MongoDB, SQL and Express.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="links-container">
+					<div class="github-card"></div>
+					<div class="linkedin-card"></div>
+					<div class="resume-card"></div>
+				</div>
+			</div>
 		</div>
 	</div>
 </Layout>
 
 <style lang="css">
-	@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap");
+	@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-	:root {
-		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	.subtitle {
+		width: auto;
+		height: fit-content;
+		margin-bottom: -30px;
+		font-weight: 400;
+	}
+
+	.title-container {
+		height: auto;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: -10px;
+		margin-top: -30px;
+	}
+
+	.gtk {
+		width: 85%;
+		height: 33%;
+		display: flex;
+		flex-direction: column;
+		margin-right: 10px;
+		margin-left: 10px;
+		margin-bottom: 15px;
+	}
+
+	.tech-stack {
+		width: 85%;
+		height: 33%;
+		display: flex;
+		flex-direction: column;
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+
+	.about-card h1 {
+		font-size: 2em;
+		font-weight: 700;
+	}
+
+	.github-card {
+		width: 100%;
+		height: 33%;
+		/* border: 1px red solid; */
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 5px;
+		background: rgba(100, 65, 165, 30%);
+		background: -webkit-linear-gradient(
+			to right,
+			rgba(42, 8, 69, 30%),
+			rgba(100, 65, 165, 30%)
+		);
+		background: linear-gradient(
+			to right,
+			rgba(42, 8, 69, 30%),
+			rgba(100, 65, 165, 30%)
+		);
+		backdrop-filter: blur(100px);
+		border-radius: 10px;
+		box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+			rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+			rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+			rgba(0, 0, 0, 0.07) 0px 32px 64px;
+	}
+
+	.linkedin-card {
+		width: 100%;
+		height: 33%;
+		/* border: 1px red solid; */
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 5px;
+		margin-top: 5px;
+		background: rgba(100, 65, 165, 30%);
+		background: -webkit-linear-gradient(
+			to right,
+			rgba(42, 8, 69, 30%),
+			rgba(100, 65, 165, 30%)
+		);
+		background: linear-gradient(
+			to right,
+			rgba(42, 8, 69, 30%),
+			rgba(100, 65, 165, 30%)
+		);
+		backdrop-filter: blur(100px);
+		border-radius: 10px;
+		box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+			rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+			rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+			rgba(0, 0, 0, 0.07) 0px 32px 64px;
+	}
+
+	.resume-card {
+		width: 100%;
+		height: 33%;
+		/* border: 1px red solid; */
+		display: flex;
+		flex-direction: column;
+		margin-top: 5px;
+		background: rgba(100, 65, 165, 30%);
+		background: -webkit-linear-gradient(
+			to right,
+			rgba(42, 8, 69, 30%),
+			rgba(100, 65, 165, 30%)
+		);
+		background: linear-gradient(
+			to right,
+			rgba(42, 8, 69, 30%),
+			rgba(100, 65, 165, 30%)
+		);
+		backdrop-filter: blur(100px);
+		border-radius: 10px;
+		box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+			rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+			rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+			rgba(0, 0, 0, 0.07) 0px 32px 64px;
+	}
+
+	.links-container {
+		width: 50%;
+		height: 100%;
+		/* border: 1px red solid; */
+		display: flex;
+		flex-direction: column;
+		border-radius: 10px;
+		margin-left: 5px;
+	}
+
+	.about-card {
+		width: 80%;
+		height: 100%;
+		/* border: 1px red solid; */
+		display: flex;
+		flex-direction: column;
+		background: rgba(100, 65, 165, 30%);
+		background: -webkit-linear-gradient(
+			to right,
+			rgba(42, 8, 69, 30%),
+			rgba(100, 65, 165, 30%)
+		);
+		background: linear-gradient(
+			to right,
+			rgba(42, 8, 69, 30%),
+			rgba(100, 65, 165, 30%)
+		);
+		border-radius: 10px;
+		margin-right: 5px;
+		align-items: center;
+		justify-content: center;
+		color: #eeeeee;
+		text-align: left;
+		backdrop-filter: blur(500px);
+		box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+			rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+			rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+			rgba(0, 0, 0, 0.07) 0px 32px 64px;
+	}
+
+	.card-container {
+		width: 98%;
+		height: 96%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 10px;
+		margin-top: 10px;
+		/* border: 1px red solid; */
+		display: flex;
+		flex-direction: row;
+		font-family: "PT Sans", sans-serif;
 	}
 
 	.lock-btn {
@@ -69,7 +277,7 @@ import { Icon } from "astro-icon";
 		align-items: center;
 		justify-content: center;
 		border-radius: 3px;
-		background-color: #eee9d6;
+		background-color: #eeeeee;
 		cursor: pointer;
 		opacity: 0;
 		animation: 1s ease 4s normal forwards fadeIn;
@@ -85,14 +293,14 @@ import { Icon } from "astro-icon";
 	}
 
 	[astro-icon="mdi:lock"] {
-		color: red;
+		color: #f4655b;
 		width: 15px;
 		height: 15px;
 		padding-top: 2px;
 	}
 
 	[astro-icon="mdi:lock-open-variant"] {
-		color: green;
+		color: #32ca43;
 		width: 15px;
 		height: 15px;
 		padding-top: 2px;
@@ -145,7 +353,7 @@ import { Icon } from "astro-icon";
 		bottom: 0;
 		width: 0;
 		height: 0;
-		border-right: 10px solid #eee9d6;
+		border-right: 10px solid #eeeeee;
 		border-top: 10px solid transparent;
 		border-bottom: 10px solid transparent;
 		z-index: 3;
@@ -156,7 +364,7 @@ import { Icon } from "astro-icon";
 		height: 100%;
 		left: 32px;
 		position: relative;
-		background: #eee9d6;
+		background: #eeeeee;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -242,7 +450,7 @@ import { Icon } from "astro-icon";
 	}
 
 	[astro-icon="ci:home-alt-fill"] {
-		color: #eee9d6;
+		color: #eeeeee;
 		width: 15px;
 		height: 15px;
 		margin-left: 25px;
@@ -264,7 +472,7 @@ import { Icon } from "astro-icon";
 	}
 
 	[astro-icon="fa-solid:tilde"] {
-		color: #eee9d6;
+		color: #eeeeee;
 		width: 12px;
 		height: 12px;
 	}
@@ -281,7 +489,7 @@ import { Icon } from "astro-icon";
 	.second {
 		width: 30px;
 		height: 100%;
-		background: #eee9d6;
+		background: #eeeeee;
 		position: relative;
 		left: -65px;
 		display: flex;
@@ -297,7 +505,7 @@ import { Icon } from "astro-icon";
 		bottom: 0;
 		width: 0;
 		height: 0;
-		border-left: 10px solid #eee9d6;
+		border-left: 10px solid #eeeeee;
 		border-top: 10px solid transparent;
 		border-bottom: 10px solid transparent;
 	}
@@ -312,7 +520,7 @@ import { Icon } from "astro-icon";
 		justify-content: center;
 		align-items: center;
 		font-size: 0.9em;
-		color: #eee9d6;
+		color: #eeeeee;
 	}
 
 	.first:before {
@@ -360,10 +568,6 @@ import { Icon } from "astro-icon";
 		font-family: "Source Code Pro", monospace;
 	}
 
-	h1 {
-		margin: 2rem 0;
-	}
-
 	.red-dot {
 		height: 10px;
 		width: 10px;
@@ -393,7 +597,8 @@ import { Icon } from "astro-icon";
 	.terminal-container {
 		width: 100%;
 		height: 100%;
-		background-color: #0e1f48;
+		background-color: rgba(14, 31, 72, 50%);
+		backdrop-filter: blur(10px);
 		border-radius: 10px;
 		display: flex;
 		align-items: center;
@@ -402,10 +607,24 @@ import { Icon } from "astro-icon";
 
 	.terminal-header {
 		width: 100%;
-		background-color: #3e2e54;
+		background: #0f0c29; /* fallback for old browsers */
+		background: -webkit-linear-gradient(
+			to right,
+			#24243e,
+			#302b63,
+			#0f0c29
+		); /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(
+			to right,
+			#24243e,
+			#302b63,
+			#0f0c29
+		); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 		border-radius: 10px 10px 0px 0px;
 		height: 25px;
 		display: flex;
+		backdrop-filter: blur(10px);
 		align-items: center;
 		justify-content: space-between;
 		/* border: #4f39fa 2px solid; */
@@ -467,7 +686,11 @@ import { Icon } from "astro-icon";
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
+		backdrop-filter: blur(500px);
 		align-items: flex-start;
+		box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+			rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+			
 	}
 </style>
 
